@@ -18,7 +18,7 @@ export default function Slider({ className }) {
   });
   return (
     <div className={`slider inset h-fit overflow-hidden p-2 z-1 ${className}`}>
-      <div className="sliderGrab circle concave align-middle content-center text-lg">
+      <div className="sliderGrab circle concave align-middle place-content-center leading-none text-sm">
         |||
       </div>
     </div>

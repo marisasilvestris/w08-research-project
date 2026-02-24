@@ -17,8 +17,10 @@ export default function Draggable({ className }) {
 
   return (
     <>
-      <div className={`draggableContainer w-full h-full ${className}`}>
-        <div className="draggable concave circle font-bold">{`(:`}</div>
+      <div
+        className={`draggableContainer inset w-full h-full overflow-hidden z-1 ${className}`}
+      >
+        <div className="draggable concave h-12 w-12 place-content-center font-bold leading-none border-amber-500 border-2">{`(:`}</div>
       </div>
     </>
   );

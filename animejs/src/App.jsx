@@ -4,8 +4,7 @@ import "./App.css";
 import Slider from "./components/Slider";
 import Button from "./components/Button";
 import Toggle from "./components/Toggle";
-import Animations from "./components/Animations";
-import Animations2 from "./components/Animations";
+import { Animations, Animations2 } from "./components/Animations";
 import Draggable from "./components/Draggable";
 import SvgAnim from "./components/SvgAnim";
 
@@ -50,7 +49,7 @@ function App() {
         <h1>anime.js examples</h1>
         <div
           ref={root}
-          className="animeroot grid grid-cols-4 grid-rows-2 gap-8 area inset"
+          className="animeroot max-w-250 grid grid-cols-1 md:grid-cols-4 grid-rows-8 md:grid-rows-2 gap-8 area inset"
         >
           <div className="centered flex flex-col area convex">
             <Slider />
@@ -70,7 +69,7 @@ function App() {
           <div className="centered w-full area flat">
             <SvgAnim />
           </div>
-          <div className="centered flat col-span-2">
+          <div className="centered col-span-2">
             <Draggable />
           </div>
         </div>

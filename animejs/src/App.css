@@ -5,11 +5,24 @@
   padding: 2rem;
   text-align: center;
 }
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
 h1 {
   color: var(--accent);
   text-shadow: rgba(0, 0, 0, 0.15) 3px 3px 5px;
   margin-bottom: 16px;
   font-size: 3rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
 }
 a {
   font-weight: 500;
