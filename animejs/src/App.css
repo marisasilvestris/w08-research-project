@@ -1,0 +1,91 @@
+@import "tailwindcss";
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+h1 {
+  color: var(--accent);
+  text-shadow: rgba(0, 0, 0, 0.15) 3px 3px 5px;
+  margin-bottom: 16px;
+  font-size: 3rem;
+}
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: inherit;
+}
+a:hover {
+  color: black;
+}
+
+.area {
+  padding: 32px;
+}
+.slider {
+  min-width: 96px;
+}
+.sliderGrab {
+  min-height: 32px;
+  min-width: 32px;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+.circle {
+  height: 32px;
+  width: 32px;
+}
+
+.toggle {
+}
+.toggle:checked {
+}
+
+button {
+  border-radius: 32px;
+  background: #e0e0e0;
+  box-shadow:
+    6px 6px 12px #bebebe,
+    -6px -6px 12px #ffffff;
+}
+button:active {
+  border-radius: 32px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow:
+    6px 6px 12px #bebebe,
+    -6px -6px 12px #ffffff;
+}
+
+.orangetext {
+  color: var(--accent);
+}
+/* default values of neumorphism.io */
+.flat {
+  border-radius: 32px;
+  background: #e0e0e0;
+  box-shadow:
+    6px 6px 12px #bebebe,
+    -6px -6px 12px #ffffff;
+}
+.concave {
+  border-radius: 32px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow:
+    6px 6px 12px #bebebe,
+    -6px -6px 12px #ffffff;
+}
+.convex {
+  border-radius: 32px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow:
+    6px 6px 12px #bebebe,
+    -6px -6px 12px #ffffff;
+}
+.inset {
+  border-radius: 32px;
+  background: #e0e0e0;
+  box-shadow:
+    inset 6px 6px 12px #bebebe,
+    inset -6px -6px 12px #ffffff;
+}
