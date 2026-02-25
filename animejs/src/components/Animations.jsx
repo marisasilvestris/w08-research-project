@@ -16,44 +16,27 @@ export function Animations({ className }) {
       //   loop: true,
       // });
 
-      animate(".anim1", {
-        "border-color": ["#ff0000", "#00ff00", "#0000ff", "#ffffff", "#ff0000"],
+      animate([".anim1", ".anim4"], {
+        "border-color": ["#ffa2a2", "#ffdf20", "#7bf1a8", "#8ec5ff", "#ffa2a2"],
         loop: true,
-        duration: 10000,
+        duration: 4000,
       });
-      animate(".anim2", {
+      animate([".anim2", ".anim4"], {
         x: [
-          { from: -50, to: 50, ease: "inOutSine" },
-          { to: -50, ease: "inOutSine" },
+          { from: -50, to: 50, ease: "linear" },
+          { to: -50, ease: "linear" },
         ],
         loop: true,
         duration: 5000,
       });
 
-      animate(".anim3", {
+      animate([".anim3", ".anim4"], {
         y: [
-          { from: -10, to: 10, ease: "inOutSine", duration: 400 },
-          { to: -10, ease: "inOutSine", duration: 400 },
+          { from: -10, to: 10, ease: "inQuad", duration: 400 },
+          { to: -10, ease: "outQuad", duration: 400 },
         ],
         loop: true,
-        duration: 5000,
-      });
-
-      animate(".anim4", {
-        x: [
-          { from: -50, to: 50, ease: "inOutSine" },
-          { to: -50, ease: "inOutSine" },
-        ],
-        loop: true,
-        duration: 5000,
-      });
-      animate(".anim4", {
-        y: [
-          { from: 10, to: -10, ease: "inOutSine", duration: 400 },
-          { to: 10, ease: "inOutSine", duration: 400 },
-        ],
-        loop: true,
-        duration: 5000,
+        duration: 4000,
       });
 
       // Properly cleanup all anime.js instances declared inside the scope
@@ -66,10 +49,11 @@ export function Animations({ className }) {
       <div
         className={`animations flex-col flex gap-5 items-center ${className}`}
       >
-        <div className="circle anim anim1 concave"></div>
+        <h3>{`animation stacking`}</h3>
+        <div className="circle anim anim1 concave border-2"></div>
         <div className="circle anim anim2 concave"></div>
         <div className="circle anim anim3 concave my-3"></div>
-        <div className="circle anim anim4 concave my-3"></div>
+        <div className="circle anim anim4 concave border-2 my-3"></div>
       </div>
     </>
   );
@@ -103,10 +87,10 @@ export function Animations2({ className }) {
         className={`animations2 flex-col flex gap-5 items-center justify-around h-full ${className}`}
       >
         <h3>{`stagger()`}</h3>
-        <div className="circle anim anim5 concave border-red-300 border-1"></div>
-        <div className="circle anim anim6 concave border-yellow-300 border-1"></div>
-        <div className="circle anim anim7 concave border-green-400 border-1"></div>
-        <div className="circle anim anim8 concave border-blue-300 border-1"></div>
+        <div className="circle anim anim5 concave border-red-300 border-2"></div>
+        <div className="circle anim anim6 concave border-yellow-300 border-2"></div>
+        <div className="circle anim anim7 concave border-green-300 border-2"></div>
+        <div className="circle anim anim8 concave border-blue-300 border-2"></div>
       </div>
     </>
   );

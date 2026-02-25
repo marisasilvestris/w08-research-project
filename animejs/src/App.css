@@ -49,6 +49,10 @@ a:hover {
   height: 32px;
   width: 32px;
 }
+.bigcircle {
+  height: 96px;
+  width: 96px;
+}
 
 .toggle {
 }
@@ -69,7 +73,20 @@ button:active {
     6px 6px 12px #bebebe,
     -6px -6px 12px #ffffff;
 }
-
+button {
+  border: 0;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+button:hover {
+  outline: 1px solid var(--accent);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 .orangetext {
   color: var(--accent);
 }

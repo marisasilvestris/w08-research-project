@@ -43,15 +43,23 @@ function App() {
     return () => scope.current.revert();
   }, []);
 
+  useEffect(() => {
+    function arrowPress() {
+      // todo
+    }
+    window.addEventListener(`keydown`, arrowPress);
+    return () => window.removeEventListener("keydown", arrowPress);
+  }, []);
+
   return (
     <>
       <div className="content">
         <h1>anime.js examples</h1>
         <div
           ref={root}
-          className="animeroot max-w-250 grid grid-cols-1 md:grid-cols-4 grid-rows-8 md:grid-rows-2 gap-8 area inset"
+          className="animeroot max-w-250 grid grid-cols-1 md:grid-cols-3 grid-rows-8 md:grid-rows-3 gap-8 area inset"
         >
-          <div className="centered flex flex-col area convex">
+          <div className="centered flex flex-col area flat">
             <Slider />
             <Toggle className={"w-fit self-center"} />
             <Button text="test button" />
@@ -66,10 +74,11 @@ function App() {
           <div className="centered area flat">
             <Animations2 />
           </div>
-          <div className="centered w-full area flat">
+          <div className="centered w-full area convex">
             <SvgAnim />
           </div>
-          <div className="centered col-span-2">
+          <div className="centered convex md:row-span-2"></div>
+          <div className="centered col-span-1 md:col-span-2">
             <Draggable />
           </div>
         </div>

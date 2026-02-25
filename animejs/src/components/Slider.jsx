@@ -12,6 +12,7 @@ export default function Slider({ className }) {
         y: false,
         releaseEase: spring({ bounce: 0.4 }),
         containerFriction: 1,
+        x: { snap: [0, 180] },
       });
     });
     return () => scope.current.revert();
