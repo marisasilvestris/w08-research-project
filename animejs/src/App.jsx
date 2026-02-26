@@ -7,6 +7,7 @@ import Toggle from "./components/Toggle";
 import { Animations, Animations2 } from "./components/Animations";
 import Draggable from "./components/Draggable";
 import SvgAnim from "./components/SvgAnim";
+import Timeline from "./components/Timeline";
 
 function App() {
   const root = useRef(null);
@@ -43,12 +44,15 @@ function App() {
     return () => scope.current.revert();
   }, []);
 
+  function btnPress() {
+    // todo
+
+    console.log(`test`);
+  }
+
   useEffect(() => {
-    function arrowPress() {
-      // todo
-    }
-    window.addEventListener(`keydown`, arrowPress);
-    return () => window.removeEventListener("keydown", arrowPress);
+    window.addEventListener(`keydown`, btnPress);
+    return () => window.removeEventListener("keydown", btnPress);
   }, []);
 
   return (
@@ -62,7 +66,7 @@ function App() {
           <div className="centered flex flex-col area flat">
             <Slider />
             <Toggle className={"w-fit self-center"} />
-            <Button text="test button" />
+            <Button text="test button" onClick={btnPress} />
           </div>
           <div className="centered area flat">
             <Toggle state={false} />
@@ -74,10 +78,10 @@ function App() {
           <div className="centered area flat">
             <Animations2 />
           </div>
-          <div className="centered w-full area convex">
-            <SvgAnim />
+          <div className="centered w-full area convex">{/* <SvgAnim /> */}</div>
+          <div className="centered convex md:row-span-2">
+            <Timeline />
           </div>
-          <div className="centered convex md:row-span-2"></div>
           <div className="centered col-span-1 md:col-span-2">
             <Draggable />
           </div>

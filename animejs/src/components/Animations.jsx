@@ -3,9 +3,10 @@ import { useEffect, useRef } from "react";
 
 export function Animations({ className }) {
   const scope = useRef(null);
+  const animRoot = useRef(null);
 
   useEffect(() => {
-    scope.current = createScope(this).add((self) => {
+    scope.current = createScope({ animRoot }).add((self) => {
       /// PUT A STAGGERY THING IN HERE
 
       // animate(".circle1", {
@@ -53,7 +54,7 @@ export function Animations({ className }) {
         <div className="circle anim anim1 concave border-2"></div>
         <div className="circle anim anim2 concave"></div>
         <div className="circle anim anim3 concave my-3"></div>
-        <div className="circle anim anim4 concave border-2 my-3"></div>
+        <div className="circle anim anim4 concave border-2"></div>
       </div>
     </>
   );
@@ -61,9 +62,10 @@ export function Animations({ className }) {
 
 export function Animations2({ className }) {
   const scope = useRef(null);
+  const anim2Root = useRef(null);
 
   useEffect(() => {
-    scope.current = createScope(".animations2").add((self) => {
+    scope.current = createScope({ anim2Root }).add((self) => {
       /// PUT A STAGGERY THING IN HERE
 
       animate([".anim5", ".anim6", ".anim7", ".anim8"], {
@@ -84,6 +86,7 @@ export function Animations2({ className }) {
   return (
     <>
       <div
+        ref={anim2Root}
         className={`animations2 flex-col flex gap-5 items-center justify-around h-full ${className}`}
       >
         <h3>{`stagger()`}</h3>

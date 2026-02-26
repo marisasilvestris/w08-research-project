@@ -2,15 +2,15 @@ import { createDraggable, createScope, animate, spring } from "animejs";
 import { useEffect, useRef } from "react";
 
 export default function Slider({ className }) {
-  const root = useRef(null);
+  const sliderRoot = useRef(null);
   const scope = useRef(null);
 
   useEffect(() => {
-    scope.current = createScope(".slider").add((self) => {
+    scope.current = createScope({ sliderRoot }).add((self) => {
       createDraggable(".sliderGrab", {
         container: ".slider",
         y: false,
-        releaseEase: spring({ bounce: 0.4 }),
+        releaseEase: "inCubic",
         containerFriction: 1,
         x: { snap: [0, 180] },
       });
@@ -18,8 +18,11 @@ export default function Slider({ className }) {
     return () => scope.current.revert();
   });
   return (
-    <div className={`slider inset h-fit overflow-hidden p-2 z-1 ${className}`}>
-      <div className="sliderGrab circle concave align-middle place-content-center leading-none text-sm">
+    <div
+      ref={sliderRoot}
+      className={`slider inset h-fit overflow-hidden p-2 z-1 bg-[linear-gradient()] ${className}`}
+    >
+      <div className="sliderGrab circle inset align-middle place-content-center leading-none text-sm">
         |||
       </div>
     </div>
