@@ -11,7 +11,7 @@ export function ButtonPanel() {
   }
   return (
     <>
-      <div className="card centered flex flex-col gap-5 area flat">
+      <div className="card centered flex flex-col gap-5 area place-items-center flat">
         <Button text="test button" onClick={btnPress} />
         <Slider />
         <Toggle state={false} />

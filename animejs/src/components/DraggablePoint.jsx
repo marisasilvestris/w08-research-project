@@ -28,7 +28,7 @@ export default function DraggablePoint({ className }) {
         className={`draggablePointContainer concave w-fit z-1 relative ${className}`}
       >
         <div className="draggablePoint convex h-16 w-16 place-content-center font-bold leading-none">{`(:`}</div>
-        <p className="absolute top-0 left-0 w-16 h-16 place-content-center montserrat border-2 border-red-300 rounded-[100%] z-[-1]">{`u win`}</p>
+        <p className="absolute top-0 left-0 w-16 h-16 place-content-center montserrat border-2 border-red-300 rounded-full z-[-1]">{`u win`}</p>
       </div>
     </>
   );

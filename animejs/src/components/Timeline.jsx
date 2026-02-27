@@ -25,9 +25,34 @@ export default function Timeline({ className }) {
         onComplete: updateButtonLabel,
       });
 
-      tl.add(".time1", { y: "15rem", borderRadius: "4px" });
-      tl.add(".time2", { y: "15rem" }, 500);
-      tl.add(".time3", { y: "15rem" }, 1000);
+      tl.add(".time1", {
+        y: {
+          to: timelineRoot.current.offsetTop,
+        },
+        borderRadius: "4px",
+      });
+      tl.add(
+        ".time2",
+        {
+          y: {
+            to: timelineRoot.current.offsetTop,
+          },
+          borderWidth: "30px",
+        },
+        500,
+      );
+      tl.add(
+        ".time3",
+        {
+          y: {
+            to: timelineRoot.current.offsetTop,
+          },
+          borderRadius: "0px",
+          width: [{ to: "70px" }, { to: "10px" }, { to: "50px" }],
+        },
+        1000,
+      );
+      console.log({ timelineRoot });
 
       const seekTimeline = () => tl.seek(+$range.value);
 
@@ -42,13 +67,12 @@ export default function Timeline({ className }) {
 
       $range.addEventListener("input", seekTimeline);
       $playPauseButton.addEventListener("click", playPauseTimeline);
-      console.log(`test`);
     });
     // Properly cleanup all anime.js instances declared inside the scope
     return () => {
       scope.current.revert();
     };
-  }, []);
+  }, [scope, timelineRoot]);
 
   return (
     <>
@@ -62,17 +86,20 @@ export default function Timeline({ className }) {
               type="range"
               min={0}
               max={2000}
-              value="defaultValue"
+              value={0}
+              onChange={() => {
+                console.log("change");
+              }}
               className="range"
             />
             <button className="button play-pause">Play</button>
           </fieldset>
         </div>
-        <div className="">
-          <div className="flex row">
-            <div className="time1 concave h-16 w-16 rounded-2xl"></div>
-            <div className="time2 concave h-16 w-16 rounded-2xl"></div>
-            <div className="time3 concave h-16 w-16 rounded-2xl"></div>
+        <div className="w-full">
+          <div className="flex row py-4 justify-around">
+            <div className="time1 concave h-14 w-14 rounded-2xl border-2 border-red-300"></div>
+            <div className="time2 concave h-14 w-14 rounded-2xl border-2 border-green-300 outline-green-300 outline-2"></div>
+            <div className="time3 concave h-14 w-14 rounded-2xl border-2 border-blue-300"></div>
           </div>
         </div>
       </div>
