@@ -9,11 +9,9 @@ import Timeline from "./components/Timeline";
 import { ButtonPanel, ButtonPanel2 } from "./panels/ButtonPanel";
 
 function App() {
-  const root = useRef(null);
-
   return (
     <>
-      <div ref={root} className="content">
+      <div className="content">
         <h1>anime.js examples</h1>
         <div className="animeroot max-w-250 grid grid-cols-1 md:grid-cols-3 grid-rows-8 md:grid-rows-3 gap-8 area inset">
           <ButtonPanel />
@@ -24,13 +22,11 @@ function App() {
           <div className="card centered w-full area convex">
             {/* <SvgAnim /> */}
           </div>
-          <div className="centered convex md:row-span-2">
-            <Timeline />
-          </div>
+          <Timeline />
+
           <div className="card centered col-span-1 md:col-span-2">
             <Draggable />
           </div>
-          <div className="card centered convex">{/* <DraggablePoint /> */}</div>
         </div>
       </div>
     </>

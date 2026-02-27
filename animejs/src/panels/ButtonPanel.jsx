@@ -4,15 +4,15 @@ import Slider from "../components/Slider";
 import Toggle from "../components/Toggle";
 
 export function ButtonPanel() {
-  function btnPress() {
-    // todo
+  // function btnPress() {
+  //   // todo
 
-    console.log(`test`);
-  }
+  //   console.log(`test`);
+  // }
   return (
     <>
       <div className="card centered flex flex-col gap-5 area place-items-center flat">
-        <Button text="test button" onClick={btnPress} />
+        {/* <Button text="test button" onClick={btnPress} /> */}
         <Slider />
         <Toggle state={false} />
         {/* <Toggle state={true} /> */}

@@ -39,7 +39,13 @@ a {
 a:hover {
   color: black;
 }
-
+/* the "oops" locator */
+/* .undefined {
+  border: 3px solid red;
+} */
+.card {
+  min-width: 250px;
+}
 .area {
   padding: 32px;
 }

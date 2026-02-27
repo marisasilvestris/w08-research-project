@@ -39,9 +39,9 @@ export function Anims1({ className }) {
     <>
       <div
         ref={animsRoot}
-        className={`animations flex-col flex gap-5 items-center ${className}`}
+        className={`animations flex-col flex gap-5 items-center w-full h-full ${className}`}
       >
-        <h3>{`animation stacking`}</h3>
+        <h3>{`animate() stacking`}</h3>
         <div className="circle anim anim1 concave border-2"></div>
         <div className="circle anim anim2 concave"></div>
         <div className="circle anim anim3 concave my-3"></div>

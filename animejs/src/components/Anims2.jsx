@@ -27,7 +27,7 @@ export function Anims2({ className }) {
     <>
       <div
         ref={animsRoot2}
-        className={`animations2 flex-col flex gap-5 items-center justify-around h-full ${className}`}
+        className={`animations2 flex-col flex gap-5 items-center justify-around w-full h-full ${className}`}
       >
         <h3 className="montserrat">{`stagger()`}</h3>
         <div className="circle anim anim5 concave border-red-300 border-2"></div>

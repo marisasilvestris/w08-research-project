@@ -27,7 +27,7 @@ export default function Timeline({ className }) {
 
       tl.add(".time1", {
         y: {
-          to: timelineRoot.current.offsetTop,
+          to: 300,
         },
         borderRadius: "4px",
       });
@@ -35,7 +35,7 @@ export default function Timeline({ className }) {
         ".time2",
         {
           y: {
-            to: timelineRoot.current.offsetTop,
+            to: 300,
           },
           borderWidth: "30px",
         },
@@ -45,10 +45,9 @@ export default function Timeline({ className }) {
         ".time3",
         {
           y: {
-            to: timelineRoot.current.offsetTop,
+            to: 300,
           },
           borderRadius: "0px",
-          width: [{ to: "70px" }, { to: "10px" }, { to: "50px" }],
         },
         1000,
       );
@@ -72,16 +71,16 @@ export default function Timeline({ className }) {
     return () => {
       scope.current.revert();
     };
-  }, [scope, timelineRoot]);
+  }, []);
 
   return (
     <>
       <div
         ref={timelineRoot}
-        className={`card timelineContainer w-full h-full ${className}`}
+        className={`card centered convex area md:row-span-2 timelineContainer  w-full h-full ${className}`}
       >
-        <div className="medium centered row">
-          <fieldset className="controls">
+        <div className="centered">
+          <fieldset className="controls flex flex-col gap-4">
             <input
               type="range"
               min={0}
@@ -90,17 +89,15 @@ export default function Timeline({ className }) {
               onChange={() => {
                 console.log("change");
               }}
-              className="range"
+              className="range convex h-12"
             />
-            <button className="button play-pause">Play</button>
+            <button className="button convex play-pause">Play</button>
           </fieldset>
         </div>
-        <div className="w-full">
-          <div className="flex row py-4 justify-around">
-            <div className="time1 concave h-14 w-14 rounded-2xl border-2 border-red-300"></div>
-            <div className="time2 concave h-14 w-14 rounded-2xl border-2 border-green-300 outline-green-300 outline-2"></div>
-            <div className="time3 concave h-14 w-14 rounded-2xl border-2 border-blue-300"></div>
-          </div>
+        <div className="flex row py-4 justify-around">
+          <div className="time1 concave circle border-2 border-red-300"></div>
+          <div className="time2 concave circle border-2 border-green-300"></div>
+          <div className="time3 concave circle border-2 border-blue-300"></div>
         </div>
       </div>
     </>
