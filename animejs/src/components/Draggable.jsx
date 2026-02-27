@@ -1,4 +1,4 @@
-import { createDraggable, createScope, Scope } from "animejs";
+import { createDraggable, createScope } from "animejs";
 import { useEffect, useRef } from "react";
 
 export default function Draggable({ className }) {
@@ -6,17 +6,17 @@ export default function Draggable({ className }) {
   const draggableRoot = useRef(null);
 
   useEffect(() => {
-    scope.current = createScope({ draggableRoot }).add((self) => {
+    scope.current = createScope({ root: ".draggableRoot" }).add(() => {
       createDraggable(`.draggable`, {
         container: ".draggableContainer",
         containerFriction: 1,
       });
-      // Properly cleanup all anime.js instances declared inside the scope
-      return () => {
-        scope.current.revert();
-      };
-    }, []);
-  });
+    });
+    // Properly cleanup all anime.js instances declared inside the scope
+    return () => {
+      scope.current.revert();
+    };
+  }, []);
 
   return (
     <>

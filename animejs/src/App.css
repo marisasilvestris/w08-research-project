@@ -11,12 +11,12 @@
     rgb(255, 180, 70),
     rgb(255, 135, 23)
   );
-}
-.montserrat {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
+}
+.montserrat {
 }
 h1 {
   color: var(--accent);
